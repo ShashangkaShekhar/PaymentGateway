@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PaymentGatewayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PaymentLog">
+    <Key>
+      <PropertyRef Name="PaymentLogID" />
+    </Key>
+    <Property Name="PaymentLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tran_id" Type="nvarchar" MaxLength="250" />
+    <Property Name="tran_date" Type="datetime" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="val_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="store_amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="bank_tran_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="card_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="card_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="card_issuer" Type="nvarchar" MaxLength="50" />
+    <Property Name="card_brand" Type="nvarchar" MaxLength="50" />
+    <Property Name="card_issuer_country" Type="nvarchar" MaxLength="50" />
+    <Property Name="card_issuer_country_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="currency_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="currency_amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="currency_rate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="base_fair" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="value_a" Type="nvarchar" MaxLength="50" />
+    <Property Name="value_b" Type="nvarchar" MaxLength="50" />
+    <Property Name="value_c" Type="nvarchar" MaxLength="50" />
+    <Property Name="risk_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="risk_level" Type="int" />
+    <Property Name="APIConnect" Type="nvarchar" MaxLength="50" />
+    <Property Name="validated_on" Type="nvarchar" MaxLength="50" />
+    <Property Name="gw_version" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="PaymentGatewayModelStoreContainer">
+    <EntitySet Name="PaymentLog" EntityType="Self.PaymentLog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

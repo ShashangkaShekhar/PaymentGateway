@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PaymentGatewayModelStoreContainer" CdmEntityContainer="PaymentGatewayEntities">
+    <EntitySetMapping Name="PaymentLogs">
+      <EntityTypeMapping TypeName="PaymentGatewayModel.PaymentLog">
+        <MappingFragment StoreEntitySet="PaymentLog">
+          <ScalarProperty Name="PaymentLogID" ColumnName="PaymentLogID" />
+          <ScalarProperty Name="tran_id" ColumnName="tran_id" />
+          <ScalarProperty Name="tran_date" ColumnName="tran_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="val_id" ColumnName="val_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="store_amount" ColumnName="store_amount" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="bank_tran_id" ColumnName="bank_tran_id" />
+          <ScalarProperty Name="card_type" ColumnName="card_type" />
+          <ScalarProperty Name="card_no" ColumnName="card_no" />
+          <ScalarProperty Name="card_issuer" ColumnName="card_issuer" />
+          <ScalarProperty Name="card_brand" ColumnName="card_brand" />
+          <ScalarProperty Name="card_issuer_country" ColumnName="card_issuer_country" />
+          <ScalarProperty Name="card_issuer_country_code" ColumnName="card_issuer_country_code" />
+          <ScalarProperty Name="currency_type" ColumnName="currency_type" />
+          <ScalarProperty Name="currency_amount" ColumnName="currency_amount" />
+          <ScalarProperty Name="currency_rate" ColumnName="currency_rate" />
+          <ScalarProperty Name="base_fair" ColumnName="base_fair" />
+          <ScalarProperty Name="value_a" ColumnName="value_a" />
+          <ScalarProperty Name="value_b" ColumnName="value_b" />
+          <ScalarProperty Name="value_c" ColumnName="value_c" />
+          <ScalarProperty Name="risk_title" ColumnName="risk_title" />
+          <ScalarProperty Name="risk_level" ColumnName="risk_level" />
+          <ScalarProperty Name="APIConnect" ColumnName="APIConnect" />
+          <ScalarProperty Name="validated_on" ColumnName="validated_on" />
+          <ScalarProperty Name="gw_version" ColumnName="gw_version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

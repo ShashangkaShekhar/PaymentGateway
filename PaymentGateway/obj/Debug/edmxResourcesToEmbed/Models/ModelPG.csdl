@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PaymentGatewayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PaymentLog">
+    <Key>
+      <PropertyRef Name="PaymentLogID" />
+    </Key>
+    <Property Name="PaymentLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tran_id" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="tran_date" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="val_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="store_amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bank_tran_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="card_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="card_issuer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="card_brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="card_issuer_country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="card_issuer_country_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="currency_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="currency_amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="currency_rate" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="base_fair" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="value_a" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="value_b" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="value_c" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="risk_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="risk_level" Type="Int32" />
+    <Property Name="APIConnect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="validated_on" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gw_version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="PaymentGatewayEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PaymentLogs" EntityType="Self.PaymentLog" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PaymentGatewayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PaymentLog">
+          <Key>
+            <PropertyRef Name="PaymentLogID" />
+          </Key>
+          <Property Name="PaymentLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tran_id" Type="nvarchar" MaxLength="250" />
+          <Property Name="tran_date" Type="datetime" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="val_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="store_amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="bank_tran_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="card_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="card_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="card_issuer" Type="nvarchar" MaxLength="50" />
+          <Property Name="card_brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="card_issuer_country" Type="nvarchar" MaxLength="50" />
+          <Property Name="card_issuer_country_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="currency_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="currency_amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="currency_rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="base_fair" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="value_a" Type="nvarchar" MaxLength="50" />
+          <Property Name="value_b" Type="nvarchar" MaxLength="50" />
+          <Property Name="value_c" Type="nvarchar" MaxLength="50" />
+          <Property Name="risk_title" Type="nvarchar" MaxLength="50" />
+          <Property Name="risk_level" Type="int" />
+          <Property Name="APIConnect" Type="nvarchar" MaxLength="50" />
+          <Property Name="validated_on" Type="nvarchar" MaxLength="50" />
+          <Property Name="gw_version" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="PaymentGatewayModelStoreContainer">
+          <EntitySet Name="PaymentLog" EntityType="Self.PaymentLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PaymentGatewayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PaymentLog">
+          <Key>
+            <PropertyRef Name="PaymentLogID" />
+          </Key>
+          <Property Name="PaymentLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tran_id" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="tran_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="val_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="store_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bank_tran_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="card_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="card_issuer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="card_brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="card_issuer_country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="card_issuer_country_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="currency_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="currency_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="currency_rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="base_fair" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="value_a" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="value_b" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="value_c" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="risk_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="risk_level" Type="Int32" />
+          <Property Name="APIConnect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="validated_on" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gw_version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PaymentGatewayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PaymentLogs" EntityType="Self.PaymentLog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PaymentGatewayModelStoreContainer" CdmEntityContainer="PaymentGatewayEntities">
+          <EntitySetMapping Name="PaymentLogs">
+            <EntityTypeMapping TypeName="PaymentGatewayModel.PaymentLog">
+              <MappingFragment StoreEntitySet="PaymentLog">
+                <ScalarProperty Name="PaymentLogID" ColumnName="PaymentLogID" />
+                <ScalarProperty Name="tran_id" ColumnName="tran_id" />
+                <ScalarProperty Name="tran_date" ColumnName="tran_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="val_id" ColumnName="val_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="store_amount" ColumnName="store_amount" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="bank_tran_id" ColumnName="bank_tran_id" />
+                <ScalarProperty Name="card_type" ColumnName="card_type" />
+                <ScalarProperty Name="card_no" ColumnName="card_no" />
+                <ScalarProperty Name="card_issuer" ColumnName="card_issuer" />
+                <ScalarProperty Name="card_brand" ColumnName="card_brand" />
+                <ScalarProperty Name="card_issuer_country" ColumnName="card_issuer_country" />
+                <ScalarProperty Name="card_issuer_country_code" ColumnName="card_issuer_country_code" />
+                <ScalarProperty Name="currency_type" ColumnName="currency_type" />
+                <ScalarProperty Name="currency_amount" ColumnName="currency_amount" />
+                <ScalarProperty Name="currency_rate" ColumnName="currency_rate" />
+                <ScalarProperty Name="base_fair" ColumnName="base_fair" />
+                <ScalarProperty Name="value_a" ColumnName="value_a" />
+                <ScalarProperty Name="value_b" ColumnName="value_b" />
+                <ScalarProperty Name="value_c" ColumnName="value_c" />
+                <ScalarProperty Name="risk_title" ColumnName="risk_title" />
+                <ScalarProperty Name="risk_level" ColumnName="risk_level" />
+                <ScalarProperty Name="APIConnect" ColumnName="APIConnect" />
+                <ScalarProperty Name="validated_on" ColumnName="validated_on" />
+                <ScalarProperty Name="gw_version" ColumnName="gw_version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
